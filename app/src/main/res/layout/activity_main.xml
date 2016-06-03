@@ -21,5 +21,6 @@
         android:layout_height="110dp"
         android:id="@+id/viewFlipper"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimaryDark"/>
 </RelativeLayout>
