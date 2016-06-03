@@ -62,11 +62,17 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	private boolean animateRight() {
-		return false;
+		viewFlipper.setInAnimation(this, R.anim.in_from_left);
+		viewFlipper.setOutAnimation(this, R.anim.out_to_right);
+		viewFlipper.showPrevious();
+		return true;
 	}
 
 
 	private boolean animateLeft() {
-		return false;
+		viewFlipper.setInAnimation(this, R.anim.in_from_right);
+		viewFlipper.setOutAnimation(this, R.anim.out_to_left);
+		viewFlipper.showNext();
+		return true;
 	}
 }
