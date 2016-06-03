@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	private class DepartureGestureListener extends GestureDetector.SimpleOnGestureListener {
+
+		public static final int MIN_DISTANCE = 30;
+		public static final int MIN_VELOCITY = 10;
+
 		@Override
 		public boolean onDown(MotionEvent e) {
 			return true;
@@ -40,7 +44,29 @@ public class MainActivity extends AppCompatActivity {
 
 		@Override
 		public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-			return super.onFling(e1, e2, velocityX, velocityY);
+			if(isSlideLeft(e1, e2, velocityX))
+				return animateLeft();
+			else if (isSlideRight(e1, e2, velocityX))
+				return animateRight();
+
+			return false;
 		}
+
+		private boolean isSlideRight(MotionEvent e1, MotionEvent e2, float velocityX) {
+			return e2.getX() - e1.getX() > MIN_DISTANCE && Math.abs(velocityX)> MIN_VELOCITY;
+		}
+
+		private boolean isSlideLeft(MotionEvent e1, MotionEvent e2, float velocityX) {
+			return e1.getX() - e2.getX() > MIN_DISTANCE && Math.abs(velocityX)> MIN_VELOCITY;
+		}
+	}
+
+	private boolean animateRight() {
+		return false;
+	}
+
+
+	private boolean animateLeft() {
+		return false;
 	}
 }
