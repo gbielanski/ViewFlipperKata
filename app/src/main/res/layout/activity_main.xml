@@ -13,5 +13,13 @@
     <TextView
         android:text="Hello World!"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"/>
+
+    <ViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:id="@+id/viewFlipper"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>
