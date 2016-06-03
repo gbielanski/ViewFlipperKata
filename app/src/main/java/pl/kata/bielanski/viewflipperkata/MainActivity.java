@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_main);
 		ButterKnife.bind(this);
 		gestureDetectorCompat = new GestureDetectorCompat(this, new DepartureGestureListener());
+		viewFlipper.setInAnimation(this, R.anim.in_from_left);
+		viewFlipper.setOutAnimation(this, R.anim.out_to_right);
 		viewFlipper.setOnTouchListener(new View.OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
