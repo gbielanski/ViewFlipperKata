@@ -32,7 +32,15 @@ public class MainActivity extends AppCompatActivity {
 		});
 	}
 
-
 	private class DepartureGestureListener extends GestureDetector.SimpleOnGestureListener {
+		@Override
+		public boolean onDown(MotionEvent e) {
+			return true;
+		}
+
+		@Override
+		public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+			return super.onFling(e1, e2, velocityX, velocityY);
+		}
 	}
 }
