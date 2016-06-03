@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
 				return gestureDetectorCompat.onTouchEvent(event);
 			}
 		});
+
+		viewFlipper.addView(new DepartuteView(this, "11:22"));
+		viewFlipper.addView(new DepartuteView(this, "22:33"));
 	}
 
 	private class DepartureGestureListener extends GestureDetector.SimpleOnGestureListener {
